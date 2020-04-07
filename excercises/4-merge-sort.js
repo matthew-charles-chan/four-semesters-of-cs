@@ -28,11 +28,9 @@ const merge = (left, right) => {
   }
   
   // append left and right arrays to reaults, if array is empty, nothing will be appended
-  results = results.concat(left, right)
+  return  results.concat(left, right)
 
-
-  return results
-}
+} 
 
 
 // breaks array into smaller arrays and calls merge
