@@ -14,5 +14,27 @@
 
 */
 
+ const quickSort = (nums) => {
+  // if array is 0 or 1 elements, return array as it is sorted
+  if (nums.length <= 1) return nums;
+  
+  // choose last element as pivot
+  const pivot = nums.pop();
+
+  // create left and right arrays
+  const left = [];
+  const right = [];
+
+  //  iterate through array, if num is smaller than pivot append left, vise-versa
+  for (const num of nums) {
+    num < pivot ? 
+      left.push(num) :
+      right.push(num);
+   }
+  
+  // return sorted left, pivot, sorted right 
+  return [...quickSort(left), pivot, ...quickSort(right)]
+ }
+
 const array = [10, 8, 2, 1, 6, 3, 9, 4, 7, 5];
 console.log(quickSort(array));
